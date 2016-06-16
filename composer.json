@@ -6,8 +6,8 @@
     "license": "MIT",
     "require": {
         "php"			                : ">=5.4.0",
-        "cardinity/cardinity-sdk-php"   : "dev-develop",
-        "symfony/validator"             : "~2.8"
+        "cardinity/cardinity-sdk-php"   : "3.x-dev",
+        "symfony/validator"             : "~3.0"
     },
     "require-dev": {
         "symfony/http-kernel"                   : "~2.8|~3.0@dev",
@@ -18,6 +18,7 @@
     "autoload": {
         "psr-4": { "Cardinity\\ClientBundle\\": "" }
     },
+    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"
     }
