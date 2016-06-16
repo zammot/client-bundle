@@ -13,7 +13,7 @@ class AbstractTestCase extends PHPUnit_Framework_TestCase
         $config = array_merge_recursive($this->getDefaultConfig(), $config);
 
         if (null === $kernel) {
-            $kernel = $this->getMock('Symfony\Component\HttpKernel\KernelInterface');
+            $kernel = $this->createMock('Symfony\Component\HttpKernel\KernelInterface');
             $kernel
                 ->expects($this->any())
                 ->method('getBundles')
@@ -28,8 +28,7 @@ class AbstractTestCase extends PHPUnit_Framework_TestCase
         $container->setParameter('kernel.bundles', array());
         $container->setParameter('kernel.root_dir', __DIR__ . '/Fixtures');
 
-        //$container->set('service_container', $container);
-        $container->set('validator', $this->getMock('\Symfony\Component\Validator\Validator\ValidatorInterface'));
+        $container->set('validator', $this->createMock('\Symfony\Component\Validator\Validator\ValidatorInterface'));
 
         $container->registerExtension($extension);
         $extension->load($config, $container);
