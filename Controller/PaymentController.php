@@ -138,7 +138,6 @@ class PaymentController
      */
     public function processAuthorizationAction(Request $request)
     {
-        $message = null;
         $identifier = $request->request->get('MD');
         $pares = $request->request->get('PaRes');
 
