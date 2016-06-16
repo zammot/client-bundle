@@ -4,10 +4,18 @@ php:
   - 5.4
   - 5.5
   - 5.6
+  - 7.0
+
+env:
+  - SYMFONY_VERSION=2.6.*
+  - SYMFONY_VERSION=2.7.*
+  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=2.3.*
 
 before_script:
   - composer self-update
-  - composer update
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/validator:${SYMFONY_VERSION}" --no-update; fi;
+  - composer install --dev --no-interaction
 
 script:
-   - phpunit
+  - phpunit -c .

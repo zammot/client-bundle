@@ -7,12 +7,12 @@
     "require": {
         "php"			                : ">=5.4.0",
         "cardinity/cardinity-sdk-php"   : "~1.0",
-        "symfony/validator"             : "~2.6"
+        "symfony/validator"             : "~2.8"
     },
     "require-dev": {
-        "symfony/http-kernel"                   : "~2.7|~3.0@dev",
-        "symfony/dependency-injection"          : "~2.7|~3.0@dev",
-        "phpunit/phpunit"                       : "~4.4",
+        "symfony/http-kernel"                   : "~2.8|~3.0@dev",
+        "symfony/dependency-injection"          : "~2.8|~3.0@dev",
+        "phpunit/phpunit"                       : "*",
         "matthiasnoback/symfony-config-test"    : "~1.0"
     },
     "autoload": {
